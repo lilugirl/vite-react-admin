@@ -4,6 +4,10 @@ import vitePluginImp from 'vite-plugin-imp'
 import path from 'path'
 import fs from 'fs'
 import lessToJS from 'less-vars-to-js'
+import config from './config';
+
+const env =process.argv[process.argv.length-1];
+const base =config[env];
 
 const themeVariables=lessToJS(
   fs.readFileSync(path.resolve(__dirname,'./config/variables.less'),'utf-8')
@@ -11,6 +15,7 @@ const themeVariables=lessToJS(
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base:base.cdn,
   plugins: [
     reactRefresh(),
     // 按需引入antd样式
