@@ -38,5 +38,17 @@ export default defineConfig({
         modifyVars:themeVariables
       }
     }
+  },
+  server:{
+    port:3001,  //开发环境启动端口
+    proxy:{
+      // 当遇到 /api 路径时，将其转换成 target 的值，
+      '/api':{
+        target:'http://47.99.134.126:28019/api/v1',
+        changeOrigin:true,
+        rewrite:path=>path.replace(/^\/api/,'') // 将/api重写为空
+      }
+    }
+
   }
 })

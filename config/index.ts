@@ -8,7 +8,7 @@ export default {
         apiBaseUrl:'//www.beta.xxx.com/v1' // 测试环境接口地址
     },
     release:{
-        cdn:'//s.xxx.com/vite-react-app/release', // 正式环境cdn路径
-        apiBaseUrl:'//www.xxx.com/v1' // 正式环境接口地址
+        cdn:'//lilugirl.github.io', // 正式环境cdn路径
+        apiBaseUrl:'//lilugirl.github.io' // 正式环境接口地址
     }
 }
